@@ -1,33 +1,32 @@
 import { GridLocaleText } from '@mui/x-data-grid';
 import * as Yup from 'yup';
-
 export const validationSchema = Yup.object({
    title: Yup.string()
-       .min(3, 'Must be 3 characters or more')
-       .max(255, 'Must be 255 characters or less')
-       .required('Required'),
+     .min(3, 'Має бути 3 або більше символів')
+     .max(255, 'Має бути 255 символів або менше')
+     .required(`Обов'язкове поле`),
    author: Yup.string()
-       .min(3, 'Must be 15 characters or more')
-       .max(100, 'Must be 100 characters or less')
-       .required('Required'),
+     .min(3, 'Має бути 15 або більше символів')
+     .max(100, 'Має бути 100 символів або менше')
+     .required(`Обов'язкове поле`),
    discountPercentage: Yup.number()
-       .integer('Must be integer')
-       .min(0, 'Відсоток знижки повинен бути не менше 0')
-       .max(100, 'Відсоток знижки повинен бути менше 100')
-       .required('Required'),
+     .integer('Має бути цілим числом')
+     .min(0, 'Має бути не менше 0')
+     .max(100, 'Має бути менше 100')
+     .required(`Обов'язкове поле`),
    publishing_year: Yup.number()
-       .integer('Must be integer')
-       .min(1980, 'Год публикации должен быть не менее 1980')
-       .max(
-           new Date().getFullYear(),
-           'Год публикации не может быть больше текущего года'
-       )
-       .required('Required'),
-   category: Yup.string().required('Required'),
-   thumbnail: Yup.string().required('Required'),
-   price: Yup.number().min(0, 'Повинен бути не менше 0'),
-   rating: Yup.number().min(0, 'Повинен бути не менше 0'),
-});
+     .integer('Має бути цілим числом')
+     .min(1980, 'Має бути не менше 1980')
+     .max(
+       new Date().getFullYear(),
+       'Не має бути більше поточного року'
+     )
+     .required(`Обов'язкове поле`),
+   category: Yup.string().required(`Обов'язкове поле`),
+   price: Yup.number().min(0, 'Має бути не менше 0'),
+   rating: Yup.number().min(0, 'Має бути не менше 0'),
+ });
+
 
 export const GRID_DEFAULT_LOCALE_TEXT: GridLocaleText = {
   // Root

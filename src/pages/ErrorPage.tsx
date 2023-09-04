@@ -1,9 +1,7 @@
 import { ShoppingCart } from '@mui/icons-material';
 import { Box, Button, Typography } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
 
 const ErrorPage = () => {
-  const navigate = useNavigate();
   return (
     <Box component="section">
       <Box
@@ -35,7 +33,7 @@ const ErrorPage = () => {
           <Button
             variant="contained"
             color="primary"
-            onClick={() => navigate('/')}
+            onClick={() => window.location.href ='/'}
           >
             Перейти
           </Button>

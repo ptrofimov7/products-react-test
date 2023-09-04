@@ -34,6 +34,7 @@ const AddToolbar = () => {
             variant="contained"
             startIcon={<AddIcon />}
             onClick={handleClick}
+            sx={{marginBlock: '15px'}}
          >
             Додати продукт
          </Button>
@@ -105,7 +106,7 @@ const ProductsTable = ({ data }: ProductsTableProps) => {
       {
          field: 'title',
          headerName: 'Назва',
-         width: 150,
+         width: 200,
          editable: false,
       },
       {

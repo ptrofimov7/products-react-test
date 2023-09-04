@@ -78,8 +78,8 @@ const AddProductForm = () => {
             >
                 Додати новий продукт
             </Typography>
-            <form onSubmit={formik.handleSubmit}>
-                <Box sx={{ marginBottom: '24px' }}>
+            <Box component="form" onSubmit={formik.handleSubmit}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Назва"
                         id="title"
@@ -89,7 +89,7 @@ const AddProductForm = () => {
                         helperText={formik.touched.title && formik.errors.title}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <InputLabel
                         htmlFor="description"
                         sx={{ fontSize: '18px', fontWeight: 400 }}
@@ -111,36 +111,28 @@ const AddProductForm = () => {
                         }}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Автор"
                         id="author"
                         fullWidth
                         {...formik.getFieldProps('author')}
-                        error={
-                            formik.touched.author && Boolean(formik.errors.author)
-                        }
-                        helperText={
-                            formik.touched.author && formik.errors.author
-                        }
+                        error={formik.touched.author && Boolean(formik.errors.author)}
+                        helperText={formik.touched.author && formik.errors.author}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Рік видання"
                         id="publishing_year"
                         type="number"
                         fullWidth
                         {...formik.getFieldProps('publishing_year')}
-                        error={
-                            formik.touched.publishing_year && Boolean(formik.errors.publishing_year)
-                        }
-                        helperText={
-                            formik.touched.publishing_year && formik.errors.publishing_year
-                        }
+                        error={formik.touched.publishing_year && Boolean(formik.errors.publishing_year)}
+                        helperText={formik.touched.publishing_year && formik.errors.publishing_year}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Вартість"
                         id="price"
@@ -151,7 +143,7 @@ const AddProductForm = () => {
                         helperText={formik.touched.price && formik.errors.price}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Відсоток знижки"
                         id="discountPercentage"
@@ -164,7 +156,7 @@ const AddProductForm = () => {
                         helperText={formik.touched.discountPercentage && formik.errors.discountPercentage}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Рейтинг"
                         id="rating"
@@ -175,7 +167,7 @@ const AddProductForm = () => {
                         helperText={formik.touched.rating && formik.errors.rating}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Запас"
                         id="stock"
@@ -186,7 +178,7 @@ const AddProductForm = () => {
                         helperText={formik.touched.stock && formik.errors.stock}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         label="Бренд"
                         id="brand"
@@ -196,8 +188,8 @@ const AddProductForm = () => {
                         helperText={formik.touched.brand && formik.errors.brand}
                     />
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
-                    <InputLabel htmlFor="category">
+                <Box sx={{ mb: '24px' }}>
+                    <InputLabel htmlFor="category" sx={{background: 'white'}}>
                         Категорія:
                     </InputLabel>
                     <Select
@@ -216,7 +208,7 @@ const AddProductForm = () => {
                         ))}
                     </Select>
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         variant="standard"
                         fullWidth
@@ -275,7 +267,7 @@ const AddProductForm = () => {
                         )}
                     </Box>
                 </Box>
-                <Box sx={{ marginBottom: '24px' }}>
+                <Box sx={{ mb: '24px' }}>
                     <TextField
                         variant="standard"
                         fullWidth
@@ -346,7 +338,7 @@ const AddProductForm = () => {
                 <Button variant="contained" type="submit">
                     Зберегти Продукт
                 </Button>
-            </form>
+            </Box>
         </Box>
     );
 };
