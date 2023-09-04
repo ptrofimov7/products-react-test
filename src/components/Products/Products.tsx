@@ -8,7 +8,7 @@ import {
 import { useMemo, useState } from 'react';
 import { Product } from '../../api/types';
 import { useAppSelector } from '../../redux/hooks';
-import { Box } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { StatusType } from '../../redux/types';
 
 const Products = () => {
@@ -39,19 +39,19 @@ const Products = () => {
   };
 
   if (status === StatusType.loading) {
-    return <p>"Завантажується..."</p>;
+    return <Typography variant='body1'>Завантажується ...</Typography>;
   }
 
   if (status === StatusType.failed) {
     return (
-      <p>"Щось пішло так. Виникла якась помилка!"</p>
+      <Typography variant='body1' color='red'>Щось пішло так. Виникла якась помилка!</Typography>
     );
   }
 
   return (
     <Box component="section">
       <Styled.CustomHeading variant="h2">
-        Таблиця продуктів
+        Продукти
       </Styled.CustomHeading>
       <SearchProductsField
         value={search}

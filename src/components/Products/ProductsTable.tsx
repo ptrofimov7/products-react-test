@@ -4,12 +4,12 @@ import Button from '@mui/material/Button';
 import AddIcon from '@mui/icons-material/Add';
 import DeleteIcon from '@mui/icons-material/DeleteOutlined';
 import {
-   DataGrid,
    GridColDef,
    GridToolbarContainer,
    GridActionsCellItem,
    GridRowId,
    GridRowsProp,
+   DataGrid,
 } from '@mui/x-data-grid';
 import { Product } from '../../api/types';
 import { useAppDispatch } from '../../redux/hooks';
@@ -226,6 +226,25 @@ const ProductsTable = ({ data }: ProductsTableProps) => {
                slots={{
                   toolbar: AddToolbar,
                }}
+               slotProps={{
+                  filterPanel: {
+                    sx: {
+                     '@media (max-width: 700px)': {
+                        '& .MuiDataGrid-filterForm': {
+                           flexDirection: 'column',
+                           gap: '15px',
+                           alignItems: 'center',
+                        },
+                        '& .MuiDataGrid-filterFormLogicOperatorInput, & .MuiDataGrid-filterFormColumnInput, & .MuiDataGrid-filterFormOperatorInput, & .MuiDataGrid-filterFormValueInput': {
+                           width: '75%',
+                        },
+                        '& .MuiDataGrid-filterFormDeleteIcon': {
+                           alignSelf: 'flex-end',
+                        },
+                     },
+                    },
+                  },
+                }}
             />
          </Box>
          <DeleteProductDialog
